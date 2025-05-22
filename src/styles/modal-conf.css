@@ -1,133 +1,101 @@
+/* === Modal Overlay === */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(18, 10, 30, 0.6); /* fundo roxo escuro translúcido */
+  background: rgba(18, 10, 30, 0.4); /* fundo translúcido suave */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999;
 }
 
+/* === Modal Container === */
 .modal {
-  background: #2a1b3d; /* fundo modal roxo escuro */
-  border: 2px solid #7c4bb8;
-  border-radius: 16px;
+  background: #fffdf9; /* fundo claro da aplicação */
+  border: 3px solid #f7b563;
+  border-radius: 24px;
   padding: 32px;
   width: 90%;
   max-width: 480px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-  animation: fadeIn 0.3s ease;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+  position: relative;
 }
 
+.modal::before {
+  content: '☁️';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+
+
 .modal h2 {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-size: 24px;
-  color: #ff7de9; /* rosa neon */
+  color: #6cb4e4; /* azul do título */
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
+.modal p {
+  color: #333;
+  line-height: 1.5;
 }
 
-.form-group label {
+.modal ul {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: #555;
+}
+
+.modal li {
+  margin-bottom: 8px;
+}
+
+.link-neon {
+  color: #f7b563;
+  text-decoration: none;
   font-weight: bold;
-  color: #e0d6f8;
-  margin-bottom: 6px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #7c4bb8;
-  background-color: #3b2c5a;
-  color: #f5eaff;
+.link-neon:hover {
+  text-decoration: underline;
 }
 
-.botoes-modal {
-  display: flex;
-  justify-content: space-between;
+/* === Footer com botão === */
+.footer {
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
 }
 
-/* animação opcional */
+.btn-primario {
+  background-color: #f7b563;
+  color: #333;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: #e89a2d;
+}
+
+/* === Animação === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.notificacao-estudo {
-  font-size: 16px;
-  font-weight: 500;
-  position: absolute;
-  z-index: 90001;
-  bottom: 3%;
-  background-color: #2a1b3d;
-  color: #f5eaff;
-  width: 100%;
-  padding: 16px;
-  margin: 16px;
-  border-radius: 8px;
-  border: 1px solid #7c4bb8;
-}
-
-.notificacao-estudo span {
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #ff7de9;
-}
-
-.tempo-restante,
-.notificacao-estudo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 400;
-  color: #e0d6f8;
-}
-
-.tempo-restante:nth-child(2),
-.tempo-restante.notificacao-estudo {
-  flex-direction: column;
-  align-items: start;
-  gap: 0px;
-}
-
-.erro-texto {
-  color: #ff4e7e;
-  font-size: 0.85rem;
-  margin-top: 4px;
-}
-
-.form-group.tempo-estudo :first-child {
-  width: 100%;
-}
-
-.form-group.tempo-estudo div {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: end;
-  gap: 20px;
-}
-
-.form-group.tempo-estudo div div {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: end;
-  gap: 5px;
-}
-
+/* === Responsividade === */
 @media (max-width: 768px) {
   .modal {
     margin: 10px;

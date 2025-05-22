@@ -1,0 +1,282 @@
+/* === Reset Geral === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff2cc;
+  font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Título === */
+.title-main {
+  text-align: center;
+  padding: 25px 10px 10px;
+}
+
+.title-main h1 {
+  color: #6cb4e4;
+  font-size: 2.5rem;
+  z-index: 4 !important;
+}
+
+.subtitle {
+  margin-top: 5px;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* === Nuvens Animadas === */
+.cloud {
+  position: fixed;
+  top: 10%;
+  width: 120px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  box-shadow: 
+    60px 0 rgba(255, 255, 255, 0.5), 
+    30px -20px rgba(255, 255, 255, 0.5), 
+    90px -10px rgba(255, 255, 255, 0.5);
+  animation: moveClouds 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveClouds {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150vw); }
+}
+
+/* === Container Principal === */
+.container-main {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* === Board === */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 1fr));
+  gap: 10px;
+  background-color: #f7b563;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.cell {
+  background-color: #fcf8ed;
+  border-radius: 18px;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  width: 90px;
+  height: 90px;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell img {
+  height: 80%;
+  object-fit: contain;
+}
+
+/* === Shine Effect === */
+.shine {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.shine div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff, 0 0 12px #fff;
+  animation: sparkle 1s ease-out forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.3);
+  }
+}
+
+/* === Mensagem (Carta) === */
+.message-card {
+  position: relative;
+  background: #fffdf9;
+  border: 4px dashed #f7b563;
+  border-radius: 24px;
+  padding: 30px 25px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.15);
+  animation: envelopeOpen 1s ease forwards;
+  transform-origin: top center;
+  text-align: center;
+  overflow: hidden;
+  flex: 1;
+  min-width: 300px;
+  background-image: 
+      radial-gradient(circle at top left, rgba(255,255,255,0.5) 5%, transparent 70%),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.4) 5%, transparent 70%);
+  background-color: #fffef9;
+}
+
+.message-card::before {
+  content: '✨ Special Message ✨';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f7b563;
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+
+.message-card::after {
+  content: '💌';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+}
+
+.message-title {
+  color: #6cb4e4;
+  margin-bottom: 14px;
+  font-size: 1.9rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 white;
+  overflow-wrap: break-word;
+}
+
+.message-text {
+  font-size: 1.1rem;
+  color: #333;
+  white-space: pre-wrap;
+  text-align: justify;
+  line-height: 1.6;
+  background: rgba(255,255,255,0.6);
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+  overflow-wrap: break-word;
+}
+
+/* === Animações === */
+@keyframes envelopeOpen {
+  0% {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+  .container-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .board {
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    gap: 8px;
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+  }
+
+  .message-card {
+    max-width: 90%;
+  }
+
+  .title-main h1 {
+    font-size: 2rem;
+  }
+
+  .message-title {
+    font-size: 1.5rem;
+  }
+}

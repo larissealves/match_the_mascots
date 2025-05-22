@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef  } from 'react';
-import { useSearchParams } from 'react-router-dom'; // dados uRL
 import PopupSupportDeveloper from './PopupSupportDeveloper'
 import '/src/styles/base.css';
 import { createShineBurst } from '/src/utils/createShine';
@@ -7,31 +6,25 @@ import shineSound from '/src/assets/sounds/sfx-accent-eye-glitter-tinkle-1-6342.
 
 import cloud from '/src/assets/images/board-itens/board-item-cloud.png';
 
-export default function Board({onWin, forcedSquares }) {
-    //const [searchParams] = useSearchParams();
-    //const paramSquares = Number(searchParams.get('squares'));
-
+export default function Board({onWin}) {
     const [showMessageWin, setShowMessageWin] = useState(false);
     const audioRef = useRef(new Audio(shineSound));
     
-    const totalCells = (forcedSquares  > 0 && forcedSquares  % 2 === 0 ) 
-        ? forcedSquares  
-        : 24; // Sempre número par (6 pares)
+    const totalCells = 18; // Sempre número par (5 pares)
+    const [varPopupSupportDeveloper, setPopupSupportDeveloper] = useState(false)
 
-  
-
-    // Importa automaticamente todas as imagens .png da pasta
+    // 🔥 Importa automaticamente todas as imagens .png da pasta
     const images = import.meta.glob('/src/assets/images/board-itens/*.png', {
         eager: true,
     });
 
-    // Cria lista das imagens
+    // 🔥 Cria lista das imagens
     const imageList = Object.entries(images).map(([path, module]) => ({
         path,
         url: module.default,
     }));
 
-    // Filtra a imagem "cloud" (verso)
+    // 🔥 Filtra a imagem "cloud" (verso)
     const mascots = imageList
         .filter((img) => !img.path.includes('cloud'))
         .map((img) => img.url);
@@ -143,8 +136,20 @@ export default function Board({onWin, forcedSquares }) {
                     
                 ))}
             
+            {/* <div className='container-botoes-mais-informacoes'>
+                <button
+                    className="btn-creditos doacao"
+                    onClick={() => setPopupSupportDeveloper(true)}
+                    title="Support the developer"
+                >
+                    ☕ Support
+                </button>
+            </div>  */}
             
-           
+
+            {varPopupSupportDeveloper && (
+                <PopupSupportDeveloper onClose={() => setPopupSupportDeveloper(false)} />
+            )}
 
         </div>
     );

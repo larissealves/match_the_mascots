@@ -1,57 +1,103 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function NewMessage ({}) {
-    const [amountSquares, SetAumontSquare] = useState(8);
+    const navigate = useNavigate();
+    const [amountSquares, setAumontSquare] = useState(6);
     const [textTitleMessage, setTextTitleMessage] = useState("")
     const [textMessage, setTextMessage] = useState("")
+    const [linkSendMessage, setLinkSendMessage] =  useState ("")
     const [errors, setErrors] = useState({});
 
-     const handleSendMessage = () => {
+
+    const handleSendMessage = () => {
         // Monta os dados
-        const params = new URLSearchParams({
+        const newErrors = {};
+        setLinkSendMessage('');
+
+        if (!textTitleMessage.trim()) {
+            newErrors.title = 'Title is required';
+        } else if (textTitleMessage.length > 150) {
+            newErrors.title = 'Title must be 150 characters or less';
+        }
+
+        if (!textMessage.trim()) {
+            newErrors.message = 'Message is required';
+        } else if (textMessage.length > 500) {
+            newErrors.message = 'Message must be 500 characters or less';
+        }
+
+        if (!amountSquares) {
+            newErrors.squares = 'Please select the amount of squares';
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
+
+        const params = {
             title: textTitleMessage,
             message: textMessage,
             squares: amountSquares
-        });
+        };
+        
+        console.log(params.squares)
+        const stringData = JSON.stringify(params);
+        const encodedData = btoa(stringData);
+        const link = `/view-message?data=${encodedData}`;
 
-        // Gera o link
-        const link = `/view-message?${params.toString()}`;
-
-        // Redireciona para a página gerada
-        navigate(link);
+        console.log(link)
+        setLinkSendMessage(link);
+        window.open(link, '_blank');
+       
     };
 
     return (
-        <div className='form-group'>
-            <h4> Send a Message</h4>
+        <div className="form-group">
+            <h4>Send a Message</h4>
+
             <label>Title:</label>
             <input
                 type="text"
                 value={textTitleMessage}
+                maxLength={150}
                 onChange={(e) => setTextTitleMessage(e.target.value)}
+                placeholder="Enter a title"
             />
+            {errors.title && <p className="error">{errors.title}</p>}
 
-            <label>message:</label>
+            <label>Message:</label>
             <textarea
-                type="area"
                 value={textMessage}
+                maxLength={500}
                 onChange={(e) => setTextMessage(e.target.value)}
+                placeholder="Write your message"
             />
+            {errors.message && <p className="error">{errors.message}</p>}
 
-            <label>amount of squares:</label>
+            <label>Amount of squares:</label>
             <select
                 value={amountSquares}
-                onChange={(e) => SetAumontSquare(Number(e.target.value))}
+                onChange={(e) => setAumontSquare(Number(e.target.value))}
             >
-                <option value="8">8 items</option>
-                <option value="16">16 items</option>
-                <option value="20">20 items</option>
+                <option value="6">6 items</option>
+                <option value="12">12 items</option>
+                <option value="18">18 items</option>
+                <option value="24">24 items</option>
             </select>
-
-            <button className='btn-primary' onClick={handleSendMessage}>
-                Send message!
+            {errors.squares && <p className="error">{errors.squares}</p>}
+             
+            <button className="btn-primary" onClick={handleSendMessage}>
+                    Send message!
             </button>
+
+            
         </div>
+
+        
     );
 }
