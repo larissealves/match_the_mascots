@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '/src/styles/mascot-gallery.css';
+import '../src/styles/mascot-gallery.css';
 
 
 export default function MascotGallery() {
-  const images = import.meta.glob('/src/assets/images/board-itens/*.png', { eager: true });
+  const images = import.meta.glob('../src/assets/images/board-itens/*.png', { eager: true });
 
   const imageList = Object.entries(images).map(([path, module]) => {
     const fileName = path.split('/').pop().replace('.png', '');

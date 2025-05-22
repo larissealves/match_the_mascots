@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Board from './Board';
-import '/src/styles/ViewMessage.css';
+import '../src/styles/ViewMessage.css';
 
 export default function ViewMessage() {
     const [searchParams] = useSearchParams();

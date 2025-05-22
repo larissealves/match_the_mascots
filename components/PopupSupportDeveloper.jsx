@@ -1,5 +1,5 @@
 import React from 'react';
-import '/src/styles/modal-conf.css';
+import '../src/styles/modal-conf.css';
 
 function PopupSupportDeveloper({ onClose }) {
   return (

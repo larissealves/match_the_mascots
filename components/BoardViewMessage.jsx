@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef  } from 'react';
 import PopupSupportDeveloper from './PopupSupportDeveloper'
-import '/src/styles/base.css';
-import { createShineBurst } from '/src/utils/createShine';
-import shineSound from '/src/assets/sounds/sfx-accent-eye-glitter-tinkle-1-6342.mp3';
+import '../src/styles/base.css';
+import { createShineBurst } from '../src/utils/createShine';
+import shineSound from '../src/assets/sounds/sfx-accent-eye-glitter-tinkle-1-6342.mp3';
 
-import cloud from '/src/assets/images/board-itens/board-item-cloud.png';
+import cloud from '../src/assets/images/board-itens/board-item-cloud.png';
 
 export default function Board({onWin}) {
     const [showMessageWin, setShowMessageWin] = useState(false);
@@ -14,7 +14,7 @@ export default function Board({onWin}) {
     const [varPopupSupportDeveloper, setPopupSupportDeveloper] = useState(false)
 
     // 🔥 Importa automaticamente todas as imagens .png da pasta
-    const images = import.meta.glob('/src/assets/images/board-itens/*.png', {
+    const images = import.meta.glob('../src/assets/images/board-itens/*.png', {
         eager: true,
     });
 
