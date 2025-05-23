@@ -23,6 +23,10 @@ div#root {
 }
 
 /* === Nuvens Flutuantes === */
+.container-cloud-main {
+  max-width: 90%;
+}
+
 .cloud {
   position: absolute;
   width: 100px;
@@ -257,8 +261,14 @@ div#root {
     width: 90%;
   }
 
+  .cloud {
+    left: 0% !important;
+  }
+
   .container-botoes-mais-informacoes {
     justify-content: center !important;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 
   }
 }
