@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import NewMessage from './components/NewMessage';
 import Board from './components/Board';
 import PopupSupportDeveloper from './components/PopupSupportDeveloper';
+import PopupTipsGoodPraticies from './components/PopupTipsGoodPraticies';
 import './src/styles/base.css'
 
 function App() {
   const [varPopupSupportDeveloper, setPopupSupportDeveloper] = useState(false)
+  const [varPopupTipsGoodPraticies, setPopupTipsGoodPraticies] = useState(false)
 
   const handleWin = () => {
     setShowMessageWin(true);
@@ -15,6 +17,18 @@ function App() {
   return (
     <div>
       <div className='container-botoes-mais-informacoes'>
+
+        <button
+          className="btn-creditos doacao"
+          onClick={() => setPopupTipsGoodPraticies(true)}
+          title="Tips & Good Practices"
+        >
+          🧠 Tips & Good Practices
+        </button>
+        {varPopupTipsGoodPraticies && (
+          <PopupTipsGoodPraticies onClose={() => setPopupTipsGoodPraticies(false)} />
+        )}
+
         <button
           className="btn-creditos doacao"
           onClick={() => setPopupSupportDeveloper(true)}
@@ -29,7 +43,7 @@ function App() {
         <Link 
           to="/credits" 
           target="_blank" 
-          className="btn-creditos"
+          className="btn-creditos doacao"
         >
           💡 Credits
         </Link>

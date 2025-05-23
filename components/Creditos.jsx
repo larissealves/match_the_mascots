@@ -24,7 +24,10 @@ export default function Credits() {
           No ads, no login, no distractions — just a cute experience designed to bring smiles and connection through game and message sharing.
         </p>
 
-        <div className="tag-dev">⚠️ This project is currently in development.</div>
+        <div className="tag-dev">
+          🚫 This project is archived and will not receive further updates.
+          <p>You can still enjoy it as it is. 💜</p>
+        </div>
 
         <section className="sessao">
           <a
@@ -36,6 +39,20 @@ export default function Credits() {
             Larisse Alves – My Linktree
           </a>
         </section>
+
+        <section className="sessao">
+          <h2>🧠 Tips & Good Practices</h2>
+          <ul>
+            This is a simple and independent project created for fun, messages, and cozy interactions. Please remember: 
+            <li>⚠️ Do not share sensitive data, passwords, personal secrets, or confidential information. </li>
+            <li>💌 This tool works by generating a link that contains your message.</li>
+            <li>🗂️ No data is stored. There's no database, no login, no account — everything lives inside the link you create.</li>
+            <li>🔒 Only people who have the link can open and view the message.</li>
+            <li>🎯 Use it for sending cute notes, greetings, or fun games — not for sensitive information.</li>
+            Enjoy it responsibly, with love and kindness. 💜✨
+          </ul>
+        </section>
+
 
         <section className="sessao">
           <h2>🛠️ Technologies Used</h2>
@@ -68,6 +85,18 @@ export default function Credits() {
           <ul>
             <li>
               <a href="https://www.instagram.com/gmmtv/" className="link-neon" target="_blank" rel="noreferrer">@gmmtv and ...</a>
+            </li>
+          </ul>
+        </section>
+
+        <section className="sessao">
+          <h2>🎧 Resources & Assets</h2>
+          <ul>
+            <li>
+              Alarm sound from: <a href="https://pixabay.com/pt/music/search/alarm/?pagi=3" className="link-neon" target="_blank" rel="noreferrer">Pixabay Music</a>
+            </li>
+            <li>
+              AI-generated visuals provided by <strong>ChatGPT</strong> image tools
             </li>
           </ul>
         </section>

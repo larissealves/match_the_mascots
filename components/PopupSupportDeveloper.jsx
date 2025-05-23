@@ -7,7 +7,8 @@ function PopupSupportDeveloper({ onClose }) {
       <div className="modal">
         <h2>💜 Support the Developer</h2>
 
-        <p>If this project helped you focus or brought you joy, consider supporting with a coffee ☕</p>
+        <p>Made by a developer who loves creating cozy, ad-free spaces for everyone. If this project made your day better, feel free to support with a coffee ☕. </p>
+        <p> Your support truly makes a difference! 💜</p>
 
         <ul style={{ lineHeight: '1.8', marginTop: '12px' }}>
           <li>💌 <strong>PayPal and PIX:</strong> alves.larisser@gmail.com</li>
