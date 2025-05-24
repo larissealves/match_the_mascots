@@ -107,7 +107,7 @@ export default function Credits() {
             If this project brought a smile to your day, feel free to support with a coffee 💜.
           </p>
           <ul>
-            <li>💌 PayPal: <strong>alves.larisser@gmail.com</strong></li>
+            <li>💌 PayPal and PIX: <strong>alves.larisser@gmail.com</strong></li>
             <li>🌍 Wise: <strong>larisser4</strong></li>
           </ul>
           <p>Any support is truly appreciated and helps me continue building cozy tools like this one. ✨</p>
