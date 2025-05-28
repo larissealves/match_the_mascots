@@ -1,24 +1,32 @@
 import React from 'react';
-import '../src/styles/modal-conf.css';
+import '../src/styles/popup-conf.css';
 
 function PopupSupportDeveloper({ onClose }) {
   return (
-    <div className="modal-overlay modal-sessao-finalizada">
-      <div className="modal">
+    <div className="popup-background">
+      <div className="popup">
+
+        {/* popup Title */}
         <h2>💜 Support the Developer</h2>
 
-        <p>Made by a developer who loves creating cozy, ad-free spaces for everyone. If this project made your day better, feel free to support with a coffee ☕. </p>
-        <p> Your support truly makes a difference! 💜</p>
+        {/* Support message */}
+        <p>
+          Made by a developer who loves creating cozy, ad-free spaces for everyone.
+          If this project made your day better, feel free to support with a coffee ☕.
+        </p>
+        <p>Your support truly makes a difference! 💜</p>
 
+        {/* Payment options */}
         <ul style={{ lineHeight: '1.8', marginTop: '12px' }}>
           <li>💌 <strong>PayPal and PIX:</strong> alves.larisser@gmail.com</li>
           <li>🌍 <strong>Wise:</strong> larisser4</li>
         </ul>
 
+        {/* External link */}
         <p style={{ marginTop: '20px' }}>
           You can also find me here: <br />
           <a
-            className="link-neon"
+            className="highlighted-link"
             href="https://linktr.ee/larisseralves"
             target="_blank"
             rel="noopener noreferrer"
@@ -27,8 +35,9 @@ function PopupSupportDeveloper({ onClose }) {
           </a>
         </p>
 
+        {/* popup footer with Close button */}
         <div className="footer" style={{ marginTop: '24px' }}>
-          <button className="btn-primario" onClick={onClose}>
+          <button className="primary-button" onClick={onClose}>
             Close
           </button>
         </div>

@@ -15,8 +15,6 @@
   margin-bottom: 10px;
 }
 
-
-
 .mascot-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -56,12 +54,10 @@
   text-align: center;
 }
 
-
-/* === Responsivo === */
+/* === Responsive === */
 @media (max-width: 768px) {
   .mascot-grid {
     grid-template-columns: max-content;
     justify-content: center;
   }
-
 }

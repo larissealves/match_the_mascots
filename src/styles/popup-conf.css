@@ -1,11 +1,11 @@
-/* === Modal Overlay === */
-.modal-overlay {
+/* === Popup Overlay === */
+.popup-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(18, 10, 30, 0.4); /* fundo translúcido suave */
+  background: rgba(18, 10, 30, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,8 @@
 }
 
 /* === Modal Container === */
-.modal {
-  background: #fffdf9; /* fundo claro da aplicação */
+.popup {
+  background: #fffdf9;
   border: 3px solid #f7b563;
   border-radius: 24px;
   padding: 32px;
@@ -28,7 +28,7 @@
   position: relative;
 }
 
-.modal::before {
+.popup::before {
   content: '☁️';
   position: absolute;
   top: -20px;
@@ -37,74 +37,47 @@
   font-size: 1.5rem;
 }
 
-
-.modal h2 {
+.popup h2 {
   margin-bottom: 18px;
   font-size: 24px;
-  color: #6cb4e4; /* azul do título */
+  color: #6cb4e4;
   text-align: center;
 }
 
-.modal p {
+.popup p {
   color: #333;
   line-height: 1.5;
 }
 
-.modal ul {
+.popup ul {
   margin-top: 12px;
   padding-left: 18px;
   color: #555;
 }
 
-.modal li {
+.popup li {
   margin-bottom: 8px;
 }
 
-.link-neon {
-  color: #f7b563;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.link-neon:hover {
-  text-decoration: underline;
-}
-
-/* === Footer com botão === */
+/* === Footer === */
 .footer {
   margin-top: 24px;
   display: flex;
   justify-content: center;
 }
 
-.btn-primario {
-  background-color: #f7b563;
-  color: #333;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primario:hover {
-  background-color: #e89a2d;
-}
-
-/* === Animação === */
+/* === Animation === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Responsividade === */
+/* === Responsive === */
 @media (max-width: 768px) {
-  .modal {
+  .popup {
     margin: 10px;
   }
-
-  .modal-overlay {
+  .popup-background {
     height: 100%;
   }
 }

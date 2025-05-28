@@ -17,7 +17,7 @@ export default function MascotGallery() {
   return (
     <div className="mascot-gallery-page">
       <section className="sessao">
-        <Link to="/" className="link-neon">← Back to Home</Link>
+        <Link to="/" className="highlighted-link">← Back to Home</Link>
       </section>
       <h1 className="title">Mascot Gallery</h1>
       <p className="subtitle">✨ Explore all the mascots available in this game ✨</p>
