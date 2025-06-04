@@ -18,8 +18,8 @@ function PopupSupportDeveloper({ onClose }) {
 
         {/* Payment options */}
         <ul style={{ lineHeight: '1.8', marginTop: '12px' }}>
-          <li>💌 <strong>PayPal and PIX:</strong> alves.larisser@gmail.com</li>
-          <li>🌍 <strong>Wise:</strong> larisser4</li>
+          <li>💌 <strong>PayPal and PIX:</strong> ********</li>
+          <li>🌍 <strong>Wise:</strong> ********</li>
         </ul>
 
         {/* External link */}
@@ -27,11 +27,11 @@ function PopupSupportDeveloper({ onClose }) {
           You can also find me here: <br />
           <a
             className="highlighted-link"
-            href="https://linktr.ee/larisseralves"
+            href="********"
             target="_blank"
             rel="noopener noreferrer"
           >
-            🌐 Larisse Alves – Linktree
+            🌐 ******** – GitHub
           </a>
         </p>
 
