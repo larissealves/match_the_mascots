@@ -30,7 +30,7 @@ export default function Credits() {
 
         {/* Main title and subtitle */}
         <h1 className="credits-title">Credits & Inspiration</h1>
-        <p className="credits-subtitle">Project by ********</p>
+        <p className="credits-subtitle">Project by Larisse Alves</p>
 
         {/* Project description */}
         <p className="project-description">
@@ -50,11 +50,11 @@ export default function Credits() {
         <section className="section">
           <a
             className="highlighted-link"
-            href="********"
+            href="https://linktr.ee/larisseralves"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ******** – My GitHub
+            Larisse Alves – My Linktree
           </a>
         </section>
 
