@@ -2,8 +2,6 @@
 
 A customizable and adorable memory game inspired by mascots from Thai BL series (like those from GMMTV). This project allows users to create hidden messages that can only be revealed by completing a mascot-matching game.
 
-![Preview](./public/preview.png)
-
 ## ✨ Features
 
 - 🧩 Memory game with randomized mascot cards
@@ -115,9 +113,9 @@ This fan-made project was lovingly built by **Larisse Alves**, inspired by the *
 ---
 
 ## 🖼️ Screenshots
-<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-01.png" height="440" alt="React" />
-<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-02.png" height="440" alt="React" />
-<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-03.png" height="440" alt="React" />
+<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-01.png"  />
+<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-02.png"  />
+<img src="https://github.com/larissealves/match_the_mascots-for-sale/blob/main/public/Screenshots/img-03.png"  />
 
 ---
 
