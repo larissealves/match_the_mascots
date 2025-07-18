@@ -1,7 +1,7 @@
 # 🧸 Match the Mascots
 
 A customizable and adorable memory game inspired by mascots from Thai BL series (like those from GMMTV). This project allows users to create hidden messages that can only be revealed by completing a mascot-matching game.
-
+ 
 ## ✨ Features
 
 - 🧩 Memory game with randomized mascot cards
